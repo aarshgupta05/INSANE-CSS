@@ -1,0 +1,183 @@
+body {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000, #1a1a1a); /* Dark gradient */
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #222, #333);
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #4a6572, #2c3e50);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 15px #2c3e50; /* Glowing effect */
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.avatar-status {
+    width: 10px;
+    height: 10px;
+    background-color: #00ff99; /* Neon green */
+    border-radius: 50%;
+    margin: 5px auto;
+    box-shadow: 0 0 5px #00ff99;
+}
+
+.avatar-name {
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff99; /* Neon text shadow */
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: linear-gradient(135deg, #333, #444);
+    color: #00ff99;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.3); /* Glowing message shadow */
+}
+
+.ai-message {
+    background: linear-gradient(135deg, #2a2a2a, #333);
+    align-self: flex-start;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #333, #444);
+    align-self: flex-end;
+    color: #b3b3b3;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #444;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #555;
+    border-radius: 25px;
+    margin-right: 10px;
+    background-color: #222;
+    color: #b3b3b3;
+}
+
+#send-button, #voice-button {
+    padding: 10px 18px;
+    border: none;
+    background: linear-gradient(135deg, #0077cc, #00aaff); /* Blue glow */
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+#voice-button {
+    margin-right: 10px;
+}
+
+.voice-input {
+    display: flex;
+    align-items: center;
+}
+
+#wave-container {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.wave {
+    width: 5px;
+    height: 100%;
+    background-color: #00ff99;
+    margin: 0 3px;
+    animation: wave 1.2s infinite ease-in-out;
+    box-shadow: 0 0 5px #00ff99;
+}
+
+/* ... (rest of the CSS remains similar) ... */
+
+.wave:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes wave {
+    0%, 60%, 100% {
+        transform: initial;
+    }
+    30% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}

@@ -1,0 +1,46 @@
+<link href="calcualtor.css" rel="stylesheet">
+
+<body>
+    <main class="container">
+        <section class="screen">
+            <p class="calculate"></p>
+            <p class="result"></p>
+        </section>
+
+        <section class="button-box">
+            <button onclick="tapClear()" class="letter-btn operator-btn">AC</button>
+            <button onclick="tapOperator('%')" class="operator-btn">%</button>
+            <button onclick="tapDel()" class="letter-btn operator-btn">DEL</button>
+            <button onclick="tapOperator('/')" class="operator-btn">&divide;</button>
+
+            <br>
+            
+            <button onclick="tapNum('9')">9</button>
+            <button onclick="tapNum('8')">8</button>
+            <button onclick="tapNum('7')">7</button>
+            <button onclick="tapOperator('*')" class="operator-btn">&times;</button>
+
+            <br>
+            
+            <button onclick="tapNum('4')">4</button>
+            <button onclick="tapNum('5')">5</button>
+            <button onclick="tapNum('6')">6</button>
+            <button onclick="tapOperator('-')" class="operator-btn">-</button>
+
+            <br>
+
+            <button onclick="tapNum('1')">1</button>
+            <button onclick="tapNum('2')">2</button>
+            <button onclick="tapNum('3')">3</button>
+            <button onclick="tapOperator('+')" class="operator-btn">+</button>
+
+            <br>
+            
+            <button onclick="tapNum('0')" class="nol-btn">0</button>
+            <button onclick="tapNum('.')">.</button>
+            <button onclick="tapResult()" class="result-btn">=</button>
+        </section>
+    </main>
+</body>
+
+<script src="calcualtor.js"></script>

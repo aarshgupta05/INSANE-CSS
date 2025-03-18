@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Spatial Orbs</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1a1a1a, #000000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .orb-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .orb {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.8), 0 0 40px rgba(0, 100, 200, 0.6);
+            animation: float 5s infinite ease-in-out, pulse 3s infinite ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, animation-duration 0.3s ease-in-out;
+        }
+
+        .orb:nth-child(1) {
+            background: linear-gradient(to bottom right, #00bfff, #0077cc);
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            background: linear-gradient(to bottom right, #8a2be2, #4b0082);
+            top: 100px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            animation-delay: 1s;
+        }
+
+        .orb:nth-child(3) {
+            background: linear-gradient(to bottom right, #00ff7f, #008000);
+            bottom: 20px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .orb.listening {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 1), 0 0 60px rgba(0, 150, 220, 0.8);
+            animation-duration: 1s, 1s;
+        }
+
+        .orb.clicked {
+            transform: scale(1.1); /* Slight scale on click */
+        }
+
+        #speakButton {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            background-color: transparent;
+            color: #00bfff;
+            border: 2px solid #00bfff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        #speakButton:hover, #speakButton:active {
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="orb-container">
+        <div class="orb" data-orb="1"></div>
+        <div class="orb" data-orb="2"></div>
+        <div class="orb" data-orb="3"></div>
+    </div>
+    <button id="speakButton">Speak</button>
+    <script>
+        const orbs = document.querySelectorAll('.orb');
+        const speakButton = document.getElementById('speakButton');
+
+        function startListening() {
+            orbs.forEach(orb => {
+                orb.classList.add('listening');
+            });
+        }
+
+        function stopListening() {
+            orbs.forEach(orb => {
+                orb.classList.remove('listening');
+            });
+        }
+
+        speakButton.addEventListener('mousedown', startListening);
+        speakButton.addEventListener('mouseup', stopListening);
+        speakButton.addEventListener('mouseleave', stopListening);
+
+        orbs.forEach(orb => {
+            orb.addEventListener('mousedown', () => {
+                orb.classList.add('clicked');
+            });
+            orb.addEventListener('mouseup', () => {
+                orb.classList.remove('clicked');
+            });
+            orb.addEventListener('mouseleave', () => {
+                orb.classList.remove('clicked');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Trail Grid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #323441;
+            overflow: hidden;
+        }
+        .grid {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+            gap: 2px;
+        }
+        .grid div {
+            background-color: #151922;
+            transition: background-color 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid"></div>
+
+    <script>
+        const grid = document.querySelector('.grid');
+        const cols = Math.floor(window.innerWidth / 52);
+        const rows = Math.floor(window.innerHeight / 52);
+        const totalBoxes = cols * rows;
+        const tiles = [];
+
+        // Create grid
+        for (let i = 0; i < totalBoxes; i++) {
+            const div = document.createElement('div');
+            grid.appendChild(div);
+            tiles.push(div);
+        }
+
+        function getTileIndex(x, y) {
+            return y * cols + x;
+        }
+
+        function applyHoverEffect(index) {
+            tiles.forEach(tile => tile.style.backgroundColor = "#151922");
+
+            const x = index % cols;
+            const y = Math.floor(index / cols);
+
+            for (let dy = -rows; dy <= rows; dy++) {
+                for (let dx = -cols; dx <= cols; dx++) {
+                    const newX = x + dx;
+                    const newY = y + dy;
+                    if (newX >= 0 && newX < cols && newY >= 0 && newY < rows) {
+                        const newIndex = getTileIndex(newX, newY);
+                        const distance = Math.sqrt(dx * dx + dy * dy); // Distance from center
+                        
+                        // Color intensity decreases with distance
+                        let redIntensity = Math.max(219 - distance * 20, 50); // Reduce red
+                        let darkenFactor = Math.max(7 - distance, 0); // Darker near center
+                        
+                        tiles[newIndex].style.backgroundColor = `rgb(${redIntensity}, 0, ${darkenFactor})`;
+                    }
+                }
+            }
+        }
+
+        tiles.forEach((tile, index) => {
+            tile.addEventListener('mouseover', () => applyHoverEffect(index));
+        });
+    </script>
+</body>
+</html>

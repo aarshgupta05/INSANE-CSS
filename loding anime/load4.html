@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotating Cube</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            perspective: 800px;
+        }
+
+        .cube {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 2s infinite linear;
+        }
+
+        .cube div {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 204, 0.8);
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        .front  { transform: rotateY(  0deg) translateZ(25px); }
+        .back   { transform: rotateY(180deg) translateZ(25px); }
+        .left   { transform: rotateY(-90deg) translateZ(25px); }
+        .right  { transform: rotateY( 90deg) translateZ(25px); }
+        .top    { transform: rotateX( 90deg) translateZ(25px); }
+        .bottom { transform: rotateX(-90deg) translateZ(25px); }
+
+        @keyframes rotateCube {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

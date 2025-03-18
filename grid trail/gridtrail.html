@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Trail Grid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #323441;
+        }
+        .grid {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(75px, 1fr));
+            gap: 2px;
+        }
+        .grid div {
+            background-color: #151922;
+            transition: background-color 0.6s ease-out, transform 0.3s ease-out;
+        }
+        .grid div:hover {
+            background-color: #DB0007;
+            transform: scale(1.1);
+        }
+        .grid div.fading {
+            background-color: #151922 !important;
+            transform: scale(1);
+            box-shadow: none;
+            transition: background-color 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <script>
+            const grid = document.querySelector('.grid');
+            const cols = Math.floor(window.innerWidth / 52);
+            const rows = Math.floor(window.innerHeight / 52);
+            const totalBoxes = cols * rows;
+            
+            for (let i = 0; i < totalBoxes; i++) {
+                const div = document.createElement('div');
+                div.addEventListener('mouseover', () => {
+                    div.classList.remove('fading');
+                    div.style.backgroundColor = '#DB0007';
+                    
+                    setTimeout(() => {
+                        div.classList.add('fading');
+                    }, 500);
+                });
+                grid.appendChild(div);
+            }
+        </script>
+    </div>
+</body>
+</html>
