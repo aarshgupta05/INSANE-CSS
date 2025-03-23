@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic AI Assistant</title>
+    <link rel="stylesheet" href="Static/CSS/aiui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="avatar-container">
+                <div class="avatar"></div>
+                <div class="avatar-status"></div>
+                <div class="avatar-name">AIAssist</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="fas fa-comments"></i> Chat</a>
+                <a href="#" class="nav-item"><i class="fas fa-history"></i> History</a>
+                <a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="chat-area">
+                <div class="message ai-message">Hello! Welcome to the future.</div>
+            </div>
+            <div class="input-area">
+                <div class="voice-input">
+                    <button id="voice-button"><i class="fas fa-microphone"></i></button>
+                    <div id="wave-container" class="hidden">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+                <input type="text" id="user-input" placeholder="Initiate Protocol...">
+                <button id="send-button"><i class="fas fa-rocket"></i></button>
+            </div>
+        </main>
+    </div>
+    <script src="Static/JS/aiui.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "insane-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aarshgupta05/INSANE-CSS.git"
+  },
+  "author": "Aarsh, Aadil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aarshgupta05/INSANE-CSS/issues"
+  },
+  "homepage": "https://github.com/aarshgupta05/INSANE-CSS#readme",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  }
+}
