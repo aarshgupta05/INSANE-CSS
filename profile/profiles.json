@@ -1,22 +1,27 @@
 {
-    "profiles": [
-      {
-        "name": "Theme Changing Button",
-        "img": "/change theme button/image.png",
-        "link": "/change theme button/change-theme-button.html"
-      },
-      {
-        "name": "AI orb",
-        "img": "/aiorb/aiorb.png",
-        "link": "/aiorb/aiorb.html"
-      },
-      {
-        "name": "Ronald",
-        "img": "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/profile-3-trans.png"
-      },
-      {
-        "name": "Elizabeth",
-        "img": "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/profile-5-trans.png"
-      }
-    ]
+    "profiles": {
+        "General": [
+            {
+                "name": "Theme Changing Button",
+                "img": "/change theme button/image.png",
+                "link": "/change theme button/change-theme-button.html"
+            },
+            {
+                "name": "Calculator",
+                "img": "/calculator/image.png",
+                "link": "/calculator/calculator.html"
+            },
+            {
+                "name": "Elizabeth",
+                "img": "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/profile-5-trans.png"
+            }
+        ],
+        "AI": [
+            {
+                "name": "AI orb",
+                "img": "/aiorb/aiorb.png",
+                "link": "/aiorb/aiorb.html"
+            }
+        ]
+    }
 }

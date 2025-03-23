@@ -27,6 +27,14 @@
     --grid-cols: 4 ;
   }
 }
+.category-heading {
+  font-size: 1.5rem; /* Larger font size */
+  font-weight: bold; /* Make the text bold */
+  color: var(--primary-color, #FFFAFA); /* Use a primary color or fallback to dark gray */
+  text-align: center; /* Center the text */
+  margin: 1.5rem 0; /* Add spacing above and below */
+  padding: 0.5rem; /* Add padding for better visibility */
+}
 .avatar{
   position: relative;
   width: var(--size);
