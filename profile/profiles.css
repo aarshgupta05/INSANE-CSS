@@ -65,7 +65,7 @@
   font-size: .9rem;
   color: var(--name-txt-clr);
   position: absolute;
-  bottom: .5rem;
+  bottom: -1.5rem;
   right: 0;
   translate: 0 var(--name-y,-50px);
   opacity: var(--name-opacity,0);
